@@ -62,20 +62,20 @@ The game script `FlappyBird.py` is structured as follows:
 ### Classes
 
 - **Bird(pygame.sprite.Sprite)**: Represents a player-controlled bird.
-  - ****init**(self, x, y, control_type, color_tag)**: Initializes with position, control type ("mouse" or "keyboard"), loads appropriate frames, sets up rect and attributes.
+  - \***\*init**(self, x, y, control_type, color_tag)\*\*: Initializes with position, control type ("mouse" or "keyboard"), loads appropriate frames, sets up rect and attributes.
   - **update(self)**: Applies gravity if flying and alive, handles input for jumping, updates animation frames, rotates image based on velocity (self.image = pygame.transform.rotate(self.frames[self.index], self.velocity \* -2 / birdRotationController)).
   - Attributes: frames (list of images), index (animation), counter, rect, velocity, clicked (input debounce), flying, control_type, passed_pipe, alive, color_tag.
 
 - **Pipe(pygame.sprite.Sprite)**: Represents pipe obstacles.
-  - ****init**(self, x, y, position)**: Creates top or bottom pipe at position, flips image for top pipes.
+  - \***\*init**(self, x, y, position)\*\*: Creates top or bottom pipe at position, flips image for top pipes.
   - **update(self)**: Moves pipe left at scrollSpeed if game started, removes when off-screen.
 
 - **Button()**: Simple button class for restart functionality.
-  - ****init**(self, x, y, image)**: Sets position and image.
+  - \***\*init**(self, x, y, image)\*\*: Sets position and image.
   - **draw(self, target_surface)**: Blits image (click detection handled externally).
 
 - **Cloud(pygame.sprite.Sprite)**: Background decoration.
-  - ****init**(self, image, lane_y)**: Sets image and position in lane.
+  - \***\*init**(self, image, lane_y)\*\*: Sets image and position in lane.
   - **update(self)**: Moves left slower than pipes (speed = max(1, scrollSpeed // 3)), removes when off-screen.
 
 ### Sprite Groups and Instances
